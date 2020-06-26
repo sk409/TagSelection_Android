@@ -28,7 +28,7 @@ class TagSelectionFragment : Fragment() {
     ): FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
         private val fragments = tabs.map { tab ->
-            TagListFragment(tab.tags, this::onListItemClick)
+            TagListFragment.newInstance(tab.tags, this::onListItemClick)
         }
 
         override fun getItem(position: Int): Fragment {
